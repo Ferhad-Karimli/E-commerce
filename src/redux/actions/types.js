@@ -1,0 +1,10 @@
+export const GET_PRODUCTS = "GET_PRODUCTS"
+export const GET_CATEGORIES= "GET_CATEGORIES"
+export const GET_Categories_BY_ID= "GET_CATEGORIES_BY_ID"
+export const IS_AUTH ='IS_AUTH'
+export const PROFIL_INFO = "PROFIL_INFO"
+export const GET_USER = "GET_USER"
+export const GET_BASKET =  "GET_BASKET"
+export const DELETE_PRODUCT="DELETE_PRODUCT"
+export const SIGN_UP_CLOSE = " SIGN_UP_CLOSE"
+export const GET_COUNT = "GET_COUNT"
