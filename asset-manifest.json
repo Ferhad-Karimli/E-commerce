@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/E-commerce/static/css/main.84448296.chunk.css",
+    "main.js": "/E-commerce/static/js/main.5d5e3770.chunk.js",
+    "main.js.map": "/E-commerce/static/js/main.5d5e3770.chunk.js.map",
+    "runtime-main.js": "/E-commerce/static/js/runtime-main.98c5d984.js",
+    "runtime-main.js.map": "/E-commerce/static/js/runtime-main.98c5d984.js.map",
+    "static/css/2.048c6387.chunk.css": "/E-commerce/static/css/2.048c6387.chunk.css",
+    "static/js/2.9448ca30.chunk.js": "/E-commerce/static/js/2.9448ca30.chunk.js",
+    "static/js/2.9448ca30.chunk.js.map": "/E-commerce/static/js/2.9448ca30.chunk.js.map",
+    "index.html": "/E-commerce/index.html",
+    "static/css/2.048c6387.chunk.css.map": "/E-commerce/static/css/2.048c6387.chunk.css.map",
+    "static/css/main.84448296.chunk.css.map": "/E-commerce/static/css/main.84448296.chunk.css.map",
+    "static/js/2.9448ca30.chunk.js.LICENSE.txt": "/E-commerce/static/js/2.9448ca30.chunk.js.LICENSE.txt",
+    "static/media/Cherries.64fe5212.jpg": "/E-commerce/static/media/Cherries.64fe5212.jpg",
+    "static/media/Ferhad.74179618.jpeg": "/E-commerce/static/media/Ferhad.74179618.jpeg",
+    "static/media/App.css": "/E-commerce/static/media/background.66402209.jpg",
+    "static/media/cake.a6d8f66b.png": "/E-commerce/static/media/cake.a6d8f66b.png",
+    "static/media/download.14cd3839.svg": "/E-commerce/static/media/download.14cd3839.svg",
+    "static/media/english.b37f86f1.jpeg": "/E-commerce/static/media/english.b37f86f1.jpeg",
+    "static/media/slick-theme.css": "/E-commerce/static/media/slick.c94f7671.ttf",
+    "static/media/sweety.a90a6b1e.jpg": "/E-commerce/static/media/sweety.a90a6b1e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.98c5d984.js",
+    "static/css/2.048c6387.chunk.css",
+    "static/js/2.9448ca30.chunk.js",
+    "static/css/main.84448296.chunk.css",
+    "static/js/main.5d5e3770.chunk.js"
+  ]
+}
