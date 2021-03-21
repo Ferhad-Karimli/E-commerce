@@ -100,6 +100,10 @@ export let loginAction = (data) => (dispatch) => {
         .catch(err => {
             console.log("error found", err)
         })
+        
+
+
+        .finally(() => alert( " You have been logged in succesfully."));
 
 }
 
@@ -141,8 +145,6 @@ export const getUser = () => dispatch => {
 }
 
 export const addBasket = (count, id,price) => dispatch => {
-console.log(count,id,price)
-    
     let addedData={}
     let data = {}
 
@@ -151,7 +153,7 @@ console.log(count,id,price)
     data.count = count
 
    
-    addedData.price=parseFloat(price)
+    addedData.price=price
     addedData.count = count
     console.log("addeddata",addedData)
 

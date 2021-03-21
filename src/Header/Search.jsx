@@ -1,4 +1,4 @@
-import React, { Component, useState, useReducer, useEffect } from "react";
+import React, { Component, useState, useReducer } from "react";
 import photo from "../Image/download.jpeg";
 import picture from "../Image/download.svg";
 import style from "../Header/Header.module.css";
@@ -24,14 +24,12 @@ import { withRouter } from "react-router-dom";
 let arr= []
 
 const Search = (props) => {
+// console.log(props)
 
-console.log("search", props)
-
-  // useEffect(() => {
-  //   props.count && console.log(arr)
-  // },[])
-
- 
+let sum = props.product.basket.reduce((acc, el) => acc+(parseFloat(el.product.price)*parseInt(el.count)),0)
+let item = props.product.basket.reduce((acc, el) => acc+parseInt(el.count),0)
+console.log(item)
+// console.log(sum)
 // let productObj =
 // props.product.basket && props.product.basket.find((el) => el.count == props.match.params.count);
 //   console.log(productObj)
@@ -39,18 +37,15 @@ console.log("search", props)
 let data = (props.count.count+1) * props.count.price
 
 // console.log(arr)
-// useEffect(() => {
-//   props.count && arr.push(data)
-// },[props.count])
-
+//  props.count && arr.push(data)
 
 // newArr.concat(arr, ...  )
 // console.log(arr)
 
 // display all values
-  for (var i = 0; i < arr.length; i++) {
-  // console.log("all",arr[i]);
-}
+//   for (var i = 0; i < arr.length; i++) {
+//   // console.log("all",arr[i]);
+// }
 
 
   const [count, setCount] = useState(props.count.count);
@@ -81,7 +76,7 @@ let add = props.count.count
           <div className={search.total_item}>
             {" "}
             <IoBagAddOutline icon={IoBagAddOutline} size="19px" />{" "}
-            <div className={search.total_items}>2 items</div>
+            <div className={search.total_items}>{item} items</div>
             <AiOutlineClose
               icon={AiOutlineClose}
               size="15px"
@@ -97,12 +92,12 @@ let add = props.count.count
      { 
      
      props.product.basket && props.product.basket.map(el => 
-<div className={search.detailed_info_main}>
+
           <div className={search.detailed_info}>
             <div className={search.detailed_info_sub}>
               <div className={search.conclusion_sub}>
                 <div>
-                
+                  {" "}
                   <BiPlus 
                   onClick={increment} style={{ marginTop: "7px" }}/>
                 </div>
@@ -111,6 +106,9 @@ let add = props.count.count
                   <BiMinus onClick={decrement} />
                 </div>
               </div>
+
+
+              
               <img
                 src={el.product.main_image}
                 width="60px"
@@ -128,6 +126,10 @@ let add = props.count.count
                 <div>{el.product.price}$</div>
 
                 <div style={{ fontSize: "13px" }}> {el.count+1}X1 pc(s)</div>
+
+
+
+                
             
               </div>
               <div
@@ -139,38 +141,23 @@ let add = props.count.count
               >
            {(el.count+1 ) * el.product.price}$
               </div>
-            
            { <AiOutlineClose
                 onClick = {() => {props.deleteBasket(el.id);
                 props.getBasket()
                 }}
              
-                size="35px"
-                style={{ marginLeft: "6.5%", marginTop: "23px" }}
+                size="15px"
+                // style={{ marginLeft: "0.5%", marginTop: "35px" }}
                 className={search.mobile_close}
               />}
-
-
-           
             </div>
-
-           
-
           </div>
-
-         
-          </div>
-
-        
-         
           )}
 
+{/* Detailed Basket finish */}
 
-
-      
+       
         </div>
-
-        {/* Detailed Basket finish */}
 
         {/*check out for mobile start */}
 
@@ -195,7 +182,7 @@ let add = props.count.count
           </div>
           <div className={search.div_2_mobile}>
             {" "}
-            <div style={{ marginTop: "10%" }}> {data}</div>{" "}
+            <div style={{ marginTop: "10%" }}> {data.toFixed(2)} $</div>{" "}
             </div>
           </div>{" "}
         </div>
@@ -222,14 +209,14 @@ let add = props.count.count
                 style={{ marginTop: "2px", display: "inline-block" }}
                 icon={IoBagAddOutline}
                 size="15px"
-              />
-              <span style={{ marginLeft: "4px" }}>5 items</span>
+              />{" "}
+              <span style={{ marginLeft: "4px" }}>{item} <span  className={style.items}> Items </span    >     </span>
             </div>
           </div>
           <div className={search.div_2}>
-            
-            <div  className= {search.mobile_price} > <div className= {search.total_price}>{data}</div>    </div>
-          </div>
+            {" "}
+            <div  className= {search.mobile_price} > <div className= {search.total_price}>{sum} $ </div>    </div>{" "}
+          </div>{" "}
         </div>
         
          {/* check out for generally finish */}

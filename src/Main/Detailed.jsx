@@ -8,6 +8,8 @@ import { useState } from "react";
 import { withRouter } from "react-router-dom";
 import {  AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux"
+
 
 const Detailed = (props) => {
 
@@ -16,9 +18,28 @@ const Detailed = (props) => {
   const [editMode, setEditMode] = useState(false);
   const [product, setProductObj] = useState(null);
   const [editCalculator, setEditCalculator] = useState(false);
-  const [count, editValue] = useState(0);
+  // const [count, editValue] = useState(0);
   const [detailedmode, setDetailedMode] = useState(false);
   const [editPlus, setEditPlus] = useState(true);
+
+
+
+  const [editModeC, setEditModeC] = useState(true);
+  const [detailedmodeC, setDetailedModeC] = useState(false);
+  const [count, editValue] = useState(0);
+  // const [counter] = useReducer(reducer, 2);
+  // console.log(count)
+  function decrement() {
+    editValue((count) => (count <= 0 ? 0 : count - 1));
+    
+  }
+
+
+
+
+
+
+
 
   function decrement() {
     editValue((count) => (count <= 0 ? 0 : count - 1));
@@ -175,7 +196,7 @@ onClick= {() => {props.addBasket(count,productObj.id);
      
     onClick={() => 
       {setEditMode(!editMode);
-      props.getCategoriesById(productObj.id)} }  >
+    props.getCategoriesById &&  props.getCategoriesById(el.id)} }  >
       <div className={detailed.sub_container}>
         <div className={detailed.add_product}>
           <div className={detailed.discount}>
@@ -259,4 +280,17 @@ onClick= {() => {props.addBasket(count,productObj.id);
   );
 };
 
-export default withRouter(Detailed);
+
+
+
+let mapsStateToProps = (state) => {
+  console.log(state.basketInfo.count.price)
+  return {
+    price: state.basketInfo.count.price,
+  };
+};
+
+export default connect(mapsStateToProps, 
+  null,
+)(withRouter(Detailed));
+

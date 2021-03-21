@@ -8,6 +8,7 @@ import SearchHeader from './Header/SearchHeader';
 import Detailed from './Main/Detailed'
 import { Redirect, Route, Switch,withRouter  } from "react-router-dom";
 import Products from './Main/Products';
+import Addproduct from './Main/Addproduct';
 
 
 function App (props) {
@@ -41,6 +42,19 @@ function App (props) {
 
 </div>
 
+<div className = "background_image"> 
+    
+      <Route
+      exact path="/e-commerce/Addproduct/"
+      render={() => <Addproduct/>}/>
+    
+
+</div>
+
+
+
+
+
 </div>
       
 <div  className="main">
@@ -69,7 +83,6 @@ let mapsStateToProps = (state) => {
 export default connect(mapsStateToProps, 
   null,
 )(withRouter(App));
-
 
 
 

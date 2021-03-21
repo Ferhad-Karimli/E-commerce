@@ -46,7 +46,7 @@ import spanish from '../Image/spanish.png'
           <span className={style.flag_style}>
 
 <img className={style.image}  src={german} alt=""/>
-</span>   <span  className={style.language_name}> German</span> 
+</span>   <span  className={style.language_name}>German</span> 
 
 
           </div>

@@ -1,15 +1,19 @@
+
+
 import React, { Component } from "react";
-import "./authentication.css";
-import { registration, updatePostAction } from "../redux/actions/index";
-import { Link } from "react-router-dom";
+
+
+import "./Addproduct.css";
 import { connect } from "react-redux";
 import * as Yup from 'yup'
 import { Formik, Form, yupToFormErrors, Field} from "formik"
-import { Textfield } from './Textfield'
+import { Textfield } from '../Main/Textfield'
 import { Input} from "reactstrap"
 
-const  Registration = (props) => {
- console.log("this",props)
+
+
+
+const  Addproduct = () => {
 
 
   const validate = Yup.object({
@@ -63,7 +67,6 @@ const  Registration = (props) => {
        <div className="aut_container">
 
 <Formik
-
   initialValues={{
    
     first_name: "",
@@ -101,14 +104,17 @@ const  Registration = (props) => {
     data.append( "image",values.image) 
     data.append( "cover_image",values.cover_image)
     data.append("checked", values.cover_image)
-    props.registration(data,props.history.push)
+ 
+   
+    
+//   props.registration(data,props.history.push)
   }}
   >
 
 { formik => (
 
  <div>
-<Form>
+<Form onSubmit={formik.handleSubmit} >
 
 <div className="button_container">
                   <Textfield label="First Name" name="first_name" type="text" />
@@ -148,7 +154,7 @@ const  Registration = (props) => {
 <button className="btn_but" type='submit'>Sign Up</button>
 <button className="btn_but" type="reset">Reset </button>
 <button
-onClick={() => props.history.replace("/login")}
+
 
 className="btn_but"
 >
@@ -160,8 +166,24 @@ Login
 </div> )}
 
 
+ 
+
 
   </Formik>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         </div>
@@ -169,4 +191,4 @@ Login
     );
   }
 
-export default connect(null, { registration })( Registration);
+export default connect(null,null)( Addproduct);

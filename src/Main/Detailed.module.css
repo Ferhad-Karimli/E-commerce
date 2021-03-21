@@ -96,7 +96,7 @@
 }
 
 .products_container{
-    height: 1000px;
+    height: 2900px !important;
     width: 100%;
     background-color:  rgb(247, 247, 247);
     display: flex;
@@ -205,6 +205,8 @@
 
 }.basket_icon{
     margin-top: 2.5%;
+}.products_container{
+    margin-top: 8% !important;
 }
 
 

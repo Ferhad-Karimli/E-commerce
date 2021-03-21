@@ -34,7 +34,7 @@ class Main extends Component {
   
             this.props.productsInfo.products.map((el) => (
              <Products key={el.id} productsInfo={el}
-              getCategoriesById={(id ) => this.props.getCategoriesById(id)}
+              getCategoriesById={(id ) => this.getCategoriesById(id)}
               addBasket= {(count,id,price) => this.props.addBasket(count,id,price)}
               getBasket={this.props.getBasket}
               Basket={(id) => this.props.deleteBasket(id)}

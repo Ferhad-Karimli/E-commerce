@@ -8,8 +8,7 @@ import { IoBagAddOutline } from "react-icons/io5";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import search from "../Header/Search.module.css";
 import { BiPlus, BiMinus } from "react-icons/bi";
-import Typewriter from 'typewriter-effect';
-// import ReactJsTyping from 'reactjs-typing-effect';
+import ReactJsTyping from 'reactjs-typing-effect';
 // function reducer(state,action){
 //   switch(action.type){
 //     case"increment":
@@ -62,18 +61,20 @@ const SearchHeader = () => {
 
 
   // const list=['Get Your Bakery Items Delivered']
-  // render(){
-  //     <div style={{ fontSize: 20, color: '#2196F3'}}>
-  //     <ReactJsTyping StringList={list} speed={500}/>
-  //      </div>
-  //  }
+ 
+     
+ 
 
+  const list=['Get Your Bakery Items Delivered']
 
 
   return (
+    
     <>
 
-
+{/* <div style={{ fontSize: 20, color: '#2196F3'}}>
+      <ReactJsTyping StringList={list} speed={500}/>
+       </div> */}
 
       <div className={style.container_search}>
 
@@ -179,19 +180,16 @@ const SearchHeader = () => {
          
               {/* <div style={{ fontSize: 45, color: '#0D1136'}}>
        <ReactJsTyping StringList={list} speed={700}/>
-  </div>
-   */}
-<div>
-<Typewriter
-onInit={(typewriter)=> {
-  typewriter
-.typeString("Get Your Bakery Items Delivered")
-.pauseFor(2000)
-.deleteAll()
-.start()
+  </div> */}
+  
 
-}}/>
-    </div>      
+{/* {list} */}
+
+
+<div style={{ fontSize: 49, color: '#0D1136'}}>
+      <ReactJsTyping StringList={list} speed={500}/>
+       </div>
+          
           
           
              </bold>
@@ -201,7 +199,7 @@ onInit={(typewriter)=> {
           at any time
         </p>
         <div className={style.sub_container}>
-        <AiOutlineSearch className={style.responsive_icon} icon={AiOutlineSearch} size="17px" />
+        <AiOutlineSearch className={style.responsive_icon}       icon={AiOutlineSearch} size="17px" />
 
           <div className={style.container_search_grocery}>Bakery
           

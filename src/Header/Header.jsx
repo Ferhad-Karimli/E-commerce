@@ -45,15 +45,15 @@ useEffect(() => {
   // This effect uses the `value` variable,
   // so it "depends on" `value`.
   props.getUser()
-//  ! props.auth && setEditMode(!editMode)
+  // props.auth && setEditMode(!editMode)
 
-},)  
+},[ props.getUser() ])  
 
 // Funcion for scroll event  start
 
   const getLength = () => {
 
-    if (window.scrollY >= 250) {
+    if (window.scrollY >350) {
       setNavbar(true)
       setNavbarContainer(true);
       // console.log(window.scrollY)
@@ -195,7 +195,7 @@ useEffect(() => {
                 onClick={() => setEditLanguage(!editLanguage)}
               >
                 <span className={style.span_language}>
-                  {" "}
+                 
                   <img
                     src={f_photo}
                     width="22px"
@@ -253,7 +253,7 @@ useEffect(() => {
 
               {/* Join Start */}
 
-              {props.auth && (
+              {!props.auth && (
                 <button
                   onClick={() => 
                     setEditLoginUp(!editLoginUp) }
@@ -329,7 +329,7 @@ useEffect(() => {
                 
                 </div>
               )}
-              {props.auth && (
+              {!props.auth && (
                 <button
                   onClick={() => setEditSignUp(!editSignUp)}
                   className={style.sign}
@@ -344,7 +344,7 @@ useEffect(() => {
 {/* Sign Up Finish */}
 
           {editMode ? null : (
-            <div className={style.drop}>
+            <div className={style.drop}   onClick={() => setEditMode(!editMode)}       >
               <Drop    LogOut={(callback) => props.LogOut(callback)} />
             </div>
           )}
