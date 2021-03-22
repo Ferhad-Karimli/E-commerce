@@ -54,9 +54,9 @@ const Products = (props) => {
             </div>
             <div className={style.add}>
     
-    <div className={style.sub_calculator}>
+    
 
-           
+      
                 <div className={style.after_click}>
                   <div className={style.plus_minus}>
                     <BiMinus
@@ -64,6 +64,7 @@ const Products = (props) => {
                       onClick={decrement}
                       color="white"
                       size="21px"
+                      className={style.plus_icon}
                     />
                   </div>
 
@@ -80,6 +81,8 @@ const Products = (props) => {
                   }}
                   className={style.plus_icon}
                   icon={BiPlus}
+                  color="white"
+                 
                   size="21px"
                 />
                 </div>
@@ -108,7 +111,7 @@ const Products = (props) => {
                   size="21px"
                 />
               </div> } */}
-              </div>
+             
             </div>
           </div>
           <Link to={`/e-commerce/detailed/${props.productsInfo.id}`}>
