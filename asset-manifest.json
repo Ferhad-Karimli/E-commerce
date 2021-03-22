@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/E-commerce/static/css/main.48672cfe.chunk.css",
-    "main.js": "/E-commerce/static/js/main.13229196.chunk.js",
-    "main.js.map": "/E-commerce/static/js/main.13229196.chunk.js.map",
+    "main.js": "/E-commerce/static/js/main.edfdc134.chunk.js",
+    "main.js.map": "/E-commerce/static/js/main.edfdc134.chunk.js.map",
     "runtime-main.js": "/E-commerce/static/js/runtime-main.98c5d984.js",
     "runtime-main.js.map": "/E-commerce/static/js/runtime-main.98c5d984.js.map",
     "static/css/2.048c6387.chunk.css": "/E-commerce/static/css/2.048c6387.chunk.css",
-    "static/js/2.5322f45b.chunk.js": "/E-commerce/static/js/2.5322f45b.chunk.js",
-    "static/js/2.5322f45b.chunk.js.map": "/E-commerce/static/js/2.5322f45b.chunk.js.map",
+    "static/js/2.1b3ae52d.chunk.js": "/E-commerce/static/js/2.1b3ae52d.chunk.js",
+    "static/js/2.1b3ae52d.chunk.js.map": "/E-commerce/static/js/2.1b3ae52d.chunk.js.map",
     "index.html": "/E-commerce/index.html",
     "static/css/2.048c6387.chunk.css.map": "/E-commerce/static/css/2.048c6387.chunk.css.map",
     "static/css/main.48672cfe.chunk.css.map": "/E-commerce/static/css/main.48672cfe.chunk.css.map",
-    "static/js/2.5322f45b.chunk.js.LICENSE.txt": "/E-commerce/static/js/2.5322f45b.chunk.js.LICENSE.txt",
+    "static/js/2.1b3ae52d.chunk.js.LICENSE.txt": "/E-commerce/static/js/2.1b3ae52d.chunk.js.LICENSE.txt",
     "static/media/Cherries.64fe5212.jpg": "/E-commerce/static/media/Cherries.64fe5212.jpg",
     "static/media/Ferhad.74179618.jpeg": "/E-commerce/static/media/Ferhad.74179618.jpeg",
     "static/media/App.css": "/E-commerce/static/media/background.66402209.jpg",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.98c5d984.js",
     "static/css/2.048c6387.chunk.css",
-    "static/js/2.5322f45b.chunk.js",
+    "static/js/2.1b3ae52d.chunk.js",
     "static/css/main.48672cfe.chunk.css",
-    "static/js/main.13229196.chunk.js"
+    "static/js/main.edfdc134.chunk.js"
   ]
 }
