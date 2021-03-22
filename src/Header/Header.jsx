@@ -107,7 +107,10 @@ useEffect(() => {
 
                   onClick={() => seteditGamburger(!editGamburger)}
                 />
-                < DropGamburgerMobile  />
+                < DropGamburgerMobile 
+                 LogOut={(callback) => props.LogOut(callback)}
+                
+                />
               </div>
             )}
 

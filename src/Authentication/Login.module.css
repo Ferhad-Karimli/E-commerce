@@ -30,6 +30,7 @@
     cursor: pointer ;
     border:none !important;
     border-radius: 6px;
+    margin-left: 5%;
 }
 
 .input:focus{

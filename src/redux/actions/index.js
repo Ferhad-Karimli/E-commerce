@@ -107,6 +107,30 @@ export let loginAction = (data) => (dispatch) => {
 
 }
 
+
+export const addProduct = ( values) =>   {
+
+    console.log (values)
+
+    axios.defaults.headers.common['Content-Type'] = `multipart/form-data`;
+    console.log(values)
+axios.post('https://mars-ecommerce3.se-pro.site/api/products/',values)
+
+.then((resp) => {
+    alert("addProduct" ,resp)
+
+})
+.catch(err => {
+    alert(err)
+})
+
+}
+
+
+
+
+
+
 export const LogOut = callback => dispatch => {
    
     window.localStorage.clear(); 

@@ -34,6 +34,7 @@
     cursor: pointer ;
     border:none !important;
     border-radius: 6px;
+    margin-right:5%;
    
 
 }
@@ -50,6 +51,7 @@
     border:none !important;
     border-radius: 6px;
     margin-top: 1.5%;
+    margin-right: 9%;
 }
 .signUp{
     padding: 0px 15px;
@@ -87,7 +89,7 @@
     margin-top: 1.5%;
     display: block ;
     flex-direction: row;
-    margin-left: 11%;
+    margin-left: 0.5%;
 }
 /* .image_input:hover{
     

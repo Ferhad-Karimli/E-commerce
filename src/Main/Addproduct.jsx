@@ -1,113 +1,135 @@
 
-
 import React, { Component } from "react";
-
-
 import "./Addproduct.css";
 import { connect } from "react-redux";
 import * as Yup from 'yup'
 import { Formik, Form, yupToFormErrors, Field} from "formik"
 import { Textfield } from '../Main/Textfield'
 import { Input} from "reactstrap"
+import { withRouter } from "react-router-dom";
+import { addProduct } from "../redux/actions";
+import ReactJsTyping from 'reactjs-typing-effect';
+const list=['product to the store.']
+ 
+
+const validate = Yup.object({
 
 
-
-
-const  Addproduct = () => {
-
-
-  const validate = Yup.object({
-    first_name:Yup.string()
+        
+    product:Yup.string()
     .max(15,"Must be 15 characters or less")
     .min(2, "Minumum must be 2 characters")
-    .required(" First name required"),
-    last_name:Yup.string()
-    .max(20,"Must be 15 characters or less")
+    .required("Product name is required"),
+    count:Yup.string()
+    .max(20,"Count number is required")
     .min(2, "Minumum must be 2 characters")
     .required(" Last name is Required"),
-    username:Yup.string()
-    .required(" Username is Required"),
-    email:Yup.string()
-    .max(20,"Must be 20 characters or less")
+    title:Yup.string()
+    .max(20,"Count number is required")
     .min(2, "Minumum must be 2 characters")
-    .required("Password is  Required"),
-    password:Yup.string()
-    .max(20,"Must be 20 characters or less")
-    .min(2, "Minumum must be 2 characters")
-    .required("Password is  Required"),
-    city:Yup.string()
-    .max(20,"Must be 20 characters or less")
-    .min(2, "Minumum must be 2 characters")
-    .required("Password is  Required"),
-    birthday:Yup.string()
-    .max(20,"Must be 20 characters or less")
-    .min(2, "Minumum must be 2 characters")
-    .required("Password is  Required"),
-    position:Yup.string()
-    .max(20,"Must be 20 characters or less")
-    .min(2, "Minumum must be 2 characters")
-    .required("Password is  Required"),
-    education:Yup.string()
-    .max(20,"Must be 20 characters or less")
-    .min(2, "Minumum must be 2 characters")
-    .required("Education is  Required"),
-    image:Yup.string()
-    .max(40,"Must be 20 characters or less")
+    .required(" Last name is Required"),
+    main_image:Yup.string()
+    .max(40,"Product Image is required")
     .min(0, "Minumum must be 0 characters")
     .required("Password is  Required"),
-    password2:Yup.string()
-    .oneOf([Yup.ref('password'),null], "Password must match")
-    .required("Confirm password is required")
+    price:Yup.string()
+    .max(40,"Product price is required")
+    .min(0, "Minumum must be 0 characters")
+    .required("Product of Price  is  Required"),
+    amount_by_unit:Yup.string()
+    .max(20,"Amount of product is required")
+    .min(2, "Minumum must be 2 characters")
+    .required("Amount of product is required"),
+    category:Yup.string()
+    .max(20,"Amount of product is required")
+    .min(2, "Minumum must be 2 characters")
+    .required("Amount of product is required"),
+    description:Yup.string()
+    .max(20,"Amount of product is required")
+    .min(2, "Minumum must be 2 characters")
+    .required("Amount of product is required"),
+    unit:Yup.string()
+    .max(20,"Amount of product is required")
+    .min(2, "Minumum must be 2 characters")
+    .required("Amount of product is required"),
+
+
+  
   })
+
+
+
+
+
+
+
+
+const  Addproduct = (props) => {
+
+    console.log(props)
+
+  
+    
+
+
+
    
     return (
       <>
-          <h1  className="welcome">Welcome to Registration Page</h1>
+          <h1  className="welcome">Add <ReactJsTyping StringList={list} speed={500}/>
+          
+          {/* <div style={{ fontSize: 49, color: '#0D1136'}}>
+<ReactJsTyping StringList={list} speed={500}/>
+ </div> */}
+          
+          </h1>
       
        <div className="aut_container">
 
 <Formik
   initialValues={{
    
-    first_name: "",
-    last_name: "",
-    username: "",
-    email: "",
-    position: "",
-    birthday: "",
-    education: "",
-    city: "",
-    cover_image: "",
-    image:"",
-    password: "",
-    password2: "",
-    checked:"",
+    product: "",
+    count: "",
+    title: "",
+    main_image: "",
+    price:"",
+    amount_by_unit:"",
+    category:"",
+    description:"",
+    unit:""
+    
+    
+  
+   
 
   }}
 
-  // validationSchema={validate}
+//   validationSchema={validate}
 //  onSubmit= { value => {
 //    console.log(value)
 //  }}
   onSubmit = { (values) => {
     let data= new FormData()
-    data.append("first_name",values.first_name)
-    data.append("last_name",values.last_name)
-    data.append("username",values.username)  
-    data.append("email", values.email)
-    data.append("position", values.position)
-    data.append('birthday',values.birthday)
-    data.append("education",values.education)
-    data.append("city",values.city)
-    data.append( "password", values.password )
-    data.append( "password2",values.password2)
-    data.append( "image",values.image) 
-    data.append( "cover_image",values.cover_image)
-    data.append("checked", values.cover_image)
- 
+
+    data.append("product",values.product)
+    data.append("count",values.count)
+    data.append("title",values.title)
+    data.append("main_image", values.main_image)
+    data.append("price", values.price)
+    data.append('amount_by_unit',values.amount_by_unit)
+    data.append('category',values.category)
+    data.append('description',values.description)
+    data.append('unit',values.unit)
+
    
+   
+    data.append("education",values.price)
+  props.addProduct(values)
+ 
+   console.log(values)
     
-//   props.registration(data,props.history.push)
+
   }}
   >
 
@@ -116,49 +138,44 @@ const  Addproduct = () => {
  <div>
 <Form onSubmit={formik.handleSubmit} >
 
-<div className="button_container">
-                  <Textfield label="First Name" name="first_name" type="text" />
-                  <Textfield label="Last Name" name="last_name" type="text" />
-                  <Textfield label="Username" name="username" type="text" />
-                  <Textfield label="Education" name="education" type="text" />
-                  <Textfield label="City" name="city" type="text" />
-                  <Textfield label="Birthday" name="birthday" type="text" />
-                  <Textfield label="Position" name="position" type="text" />
-                  <Textfield label="Email" name="email" type="email" />
-                  {/* <Textfield label="Profile photo" name="image" type="file" /> */}
-                 
 
-                 
+
+
+<div className="button_container">
+                  <Textfield label="Product" name="product" type="text" />
+                  <Textfield label="Count of Product" name="count" type="text" />
+                  <Textfield label="Name of Product" name="title" type="text" />
+                  <Textfield label="Unit of Product" name="amount_by_unit" type="text" />
+                  <Textfield label="Price of Product" name="price" type="text" />
+                  <Textfield label="Category of Product" name="category" type="text" />
+                  <Textfield label="Description of Product" name="description" type="text" />
+                  <Textfield label="Unit of Product" name="unit" type="text" />
+
+            
                   {/* <Textfield
                     label="Cover photo"
                     name="cover_image"
                     type="file"
                   /> */}
-                  <Textfield label="Password" name="password" type="password" />
-                  <Textfield
-                    label="Confirm Password"
-                    name="password2"
-                    type="password"/>
+               
+
+                 
+
+<label for="profile" className="label_name">Image of Product</label> <br/>
+<Input label="Profile photo" name="main_image" type="file"  className = "auth_input" onChange ={ (e) => formik.setFieldValue("main_image",e.target.files[0]) } />  <br/>
 
 
-<label for="profile" className="label_name">Profile photo</label> <br/>
-<Input label="Profile photo" name="image" type="file"  className = "auth_input" onChange ={ (e) => formik.setFieldValue("image",e.target.files[0]) } />  <br/>
-<label for="male" className="label_name"  >Cover Photo</label> 
-<Input label="Cover photo" name="cover_image" type="file"  className = "auth_input" onChange ={ (e) => formik.setFieldValue("cover_image",e.target.files[0]) } />
-<span  className="gender">
-<Field type = "radio"  value="man" name="checked"  id='1'/> <span className=" gender-color" >   Man</span> 
-<Field type = "radio"  value="woman"  name="checked" id='2'/> <span className=" gender-color" > Woman </span> 
-</span>
 </div>
 <span className="button_containe">
-<button className="btn_but" type='submit'>Sign Up</button>
+<button className="btn_but" type='submit'>Add</button>
 <button className="btn_but" type="reset">Reset </button>
 <button
 
 
 className="btn_but"
+onClick={ () => props.history.push("/e-commerce/") } 
 >
-Login
+Go to home
 </button>
 
 </span>
@@ -166,24 +183,9 @@ Login
 </div> )}
 
 
- 
 
 
   </Formik>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         </div>
@@ -191,4 +193,5 @@ Login
     );
   }
 
-export default connect(null,null)( Addproduct);
+// export default connect(null,null)( withRouter(Addproduct));
+export default connect(null,{addProduct})( withRouter(Addproduct));

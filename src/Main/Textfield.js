@@ -9,7 +9,7 @@ export const Textfield = ({label, ...props}) => {
 return(
 <>
 <label   className= "input_text" htmlFor={field.name}>{label}</label> <br/>
-<input placeholder={field.name}    className={` auth_input ${meta.touched && meta.error && 'is-invalid'}`}
+<input  className={` auth_input ${meta.touched && meta.error && 'is-invalid'}`}
 {...field} {...props} 
 autoComplete="off"/> <br/>
 <ErrorMessage  component="div" name={field.name}  className='error' />
